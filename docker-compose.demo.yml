@@ -1,0 +1,15 @@
+---
+version: '2.1'
+
+services:
+  kibana:
+    command: ["npm", "start", "--", "--no-base-path"]
+
+  demo:
+    container_name: 'demo'
+    image: opendatastack/elasticsearch-demo:6.0.0
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+      kibana:
+        condition: service_healthy
