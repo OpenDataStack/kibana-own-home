@@ -2,6 +2,7 @@ import upgrade from './upgrade_config';
 import createClient from './create_client';
 
 module.exports = function (server, index, ignore) {
+  server.log(['plugin:own-home', 'debug'], 'migrate_config');
   const config = server.config();
   const client = createClient(server);
   const options =  {
