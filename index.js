@@ -8,7 +8,7 @@ export default function (kibana) {
 
     uiExports: {
       app: {
-        title: 'Own Home',
+        title: 'Kibana Multi-tenant',
         description: 'Add multi-tenancy feature to Kibana',
         main: 'plugins/own_home/app',
         icon: 'plugins/own_home/icon.svg'
