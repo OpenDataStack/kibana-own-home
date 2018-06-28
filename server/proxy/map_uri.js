@@ -1,4 +1,4 @@
-import { defaults, omit, trimEnd, trimStart } from 'lodash';
+import { defaults, omit, trimRight, trimLeft } from 'lodash';
 import { parse as parseUrl, format as formatUrl, resolve } from 'url';
 import createKibanaIndex from './create_kibana_index';
 import migrateConfig from './migrate_config';
@@ -9,7 +9,7 @@ export default function mapUri(server) {
   const config = server.config();
 
   function joinPaths(pathA, pathB) {
-    return trimEnd(pathA, '/') + '/' + trimStart(pathB, '/');
+    return trimRight(pathA, '/') + '/' + trimLeft(pathB, '/');
   }
 
   return function (request, done) {
